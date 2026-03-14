@@ -65,32 +65,17 @@ begin
         if rising_edge(clk) then
             if rstn = '1' then
                 color_send <= "00";
-                cntr <= (others => '0');
-            end if;
-        
-
-            for x in 0 to 2 loop 
-                for i in 0 to 2 loop
-                    if rising_edge(ready_bit) then 
-                        color_send <= i_board(to_integer(cntr+1) downto to_integer(cntr));
-                        cntr <= cntr + 2; 
-                    end if;
-                end loop;
-                for j in 0 to 4 loop 
-                    if rising_edge(ready_bit) then 
-                        color_send <= "00";
-                    end if;
-                end loop;
-            end loop;
-
-            for k in 0 to 39 loop 
-                if rising_edge(ready_bit) then 
+                cntr <= 0;
+            elsif ready_bit = '1' then
+                if cntr < 18 then
+                    color_send <= i_board(cntr+1 downto cntr);
+                    cntr <= cntr + 2;
+                else
                     color_send <= "00";
+                    cntr <= 0;
                 end if;
-            end loop;
+            end if;
         end if;
-        cntr <= (others => '0');
-
     end process;
 
 
