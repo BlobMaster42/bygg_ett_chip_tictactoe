@@ -3,12 +3,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity display is
-    generic (
-        RED : unsigned(23 downto 0) := "000000001111111100000000";
-        YELLOW : unsigned(23 downto 0) := "111111111111111100000000";
-        BLUE : unsigned(23 downto 0) := "000000000000000011111111"
-    );
-    
     port(
         clk : in std_logic;
         color : in std_logic_vector(1 downto 0);
@@ -18,6 +12,9 @@ entity display is
 end display;
 
 architecture Driver of display is
+    constant RED : unsigned(23 downto 0) := "000000001111111100000000";
+    constant YELLOW: unsigned(23 downto 0) := "111111111111111100000000";
+    constant BLUE: unsigned(23 downto 0) := "000000000000000011111111";
     signal count: unsigned(5 downto 0) := (others => '0');
     signal bit_count : unsigned(4 downto 0) := (others => '0');
     signal data_reg : std_logic := '0';
