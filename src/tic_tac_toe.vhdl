@@ -65,7 +65,7 @@ begin
         if rising_edge(clk) then
             if rstn = '1' then
                 color_send <= "00";
-                cntr <= 0;
+                cntr <= (others => '0');
             end if;
         
 
