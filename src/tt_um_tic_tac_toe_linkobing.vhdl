@@ -45,5 +45,6 @@ begin
             data => data,
             rdy => ready_bit   -- connect display ready signal back to TicTacToe
         );
+    
 
 end Behavioral;
