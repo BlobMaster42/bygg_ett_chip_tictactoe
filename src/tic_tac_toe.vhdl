@@ -68,7 +68,7 @@ begin
                 cntr <= (others => '0');
             elsif ready_bit = '1' then
                 if cntr < 18 then
-                    color_send <= i_board(cntr+1 downto cntr);
+                    color_send <= i_board(to_integer(cntr+1) downto to_integer(cntr));
                     cntr <= cntr + 2;
                 else
                     color_send <= "00";
