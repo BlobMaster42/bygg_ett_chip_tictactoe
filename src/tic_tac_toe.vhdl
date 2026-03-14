@@ -65,14 +65,14 @@ begin
         if rising_edge(clk) then
             if rstn = '1' then
                 color_send <= "00";
-                cntr <= 0;
+                cntr <= (others => '0');
             elsif ready_bit = '1' then
                 if cntr < 18 then
                     color_send <= i_board(cntr+1 downto cntr);
                     cntr <= cntr + 2;
                 else
                     color_send <= "00";
-                    cntr <= 0;
+                    cntr <= (others => '0');
                 end if;
             end if;
         end if;
