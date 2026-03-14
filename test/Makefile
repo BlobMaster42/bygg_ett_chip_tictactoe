@@ -2,7 +2,7 @@
 # See https://docs.cocotb.org/en/stable/quickstart.html for more info
 
 # List your source files here:
-SOURCE_FILES = display.vhdl tic_tac_toe.vhdl tt_um_tic_tac_toe_linkobing.vhdl
+SOURCE_FILES = tt_um_tic_tac_toe_linkobing.vhdl display.vhdl tic_tac_toe.vhdl 
 
 # Common
 WAVES ?= 1
