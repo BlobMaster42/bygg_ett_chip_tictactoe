@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity top_level is
+entity tt_um_tic_tac_toe_linkobing is
     port(
         clk     : in std_logic;
         rstn    : in std_logic;
@@ -10,9 +10,9 @@ entity top_level is
         sel     : in std_logic;
         data    : out std_logic
     );
-end top_level;
+end tt_um_tic_tac_toe_linkobing;
 
-architecture Behavioral of top_level is
+architecture Behavioral of tt_um_tic_tac_toe_linkobing is
 
     -- Signals connecting tictactoe and display
     --signal choose_position : unsigned(3 downto 0);
