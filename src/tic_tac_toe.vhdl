@@ -60,7 +60,7 @@ begin
 
     end process;
 
-    send_color : process (ready_bit)
+    send_color : process (clk)
     begin 
         if rising_edge(clk) then
             if rstn = '1' then
